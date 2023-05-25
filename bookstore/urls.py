@@ -8,8 +8,8 @@ app_name = 'bookstore'
 urlpatterns = [
     path('', books_list,name='index'),
     path('book_list/', books_list, name="book-list"),
-    path('book_detail/<int:task_id>', book_detail, name="book-detail"),
-    path('book_delete/<int:task_id>', book_delete, name="book-delete"),
-    path('book_update/<int:task_id>', book_update, name="book-update"),
-    path('book_create/', create_book, name="book-create"),
+    path('<int:pk>/detail', book_detail, name="book-detail"),
+    path('<int:pk>/delete', book_delete, name="book-delete"),
+    path('<int:pk>/update', book_update, name="book-update"),
+    path('create', create_book, name="book-create"),
 ]
